@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Komvux Prime Sweden</title>
+  </head>
+  <body>
+    <!-- ABOVE NAVBAR -->
+    <div class="above bg-warning float-right">
+        <div class="container-fluid p-0 m-0">
+            <div class="container text-center text-md-left">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-7 col-lg-8 d-none d-xl-block d-lg-block d-md-block">
+                <p class="text-center text-md-left">Komvux, Helsingborg</p>
+              </div>
+      
+              <div class="col-md-5 col-lg-4 ml-lg-0 pr-5 m-0">
+                <div class="text-center text-md-right">
+                  <ul class="">
+                    <li class="list-inline-item p-0 m-0">
+                      <a class="mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item p-0 m-0">
+                      <a class="mx-1">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item p-0 m-0">
+                      <a class=" mx-1">
+                        <i class="fab fa-google-plus-g"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item p-0 m-0">
+                      <a class="mx-1">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>              
+            </div>
+           </div>
+          </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="sticky" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand text-warning ml-3" style="font-size: 1.7em" href="#"><i class="fas fa-camera-retro"></i> PHOTOGRAPHY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon text-warning"><i class="fa fa-bars" style="color: #ffc400; font-size: 1.6em;"></i></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+   
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search" style="color: #ffc400; font-size: 1.4em;"></i></button>
+                </form>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      CATEGORIES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a id="flowers" class="dropdown-item" href="#">Flowers</a>
+                      <a id="science" class="dropdown-item" href="#">Science</a>
+                      <a id="toys" class="dropdown-item" href="#">Toys</a>
+                      <a class="dropdown-item" href="#">Landscape</a>
+                      <a class="dropdown-item" href="#">Decoration</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Undefiend</a>
+                    </div>
+                  </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning"href="type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal"><i class="fas fa-cart-plus"></i><span class="itemsnum px-2 bg-danger text-white" style="border-radius: 50%;">0</span></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning"href="type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">SIGN IN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+  <!-- CART MODAL -->
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-warning" id="exampleModalLabel" style="font-size: 1.5em;"><i class="fas fa-cart-plus"></i> Shopping Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="cart" class="modal-body">
+          <!-- Cart Array List -->
+
+        </div>
+        <hr>
+        <div class="row px-3">
+          <div class="col-12 d-flex justify-content-between">
+            <h5>TOTAL</h5>
+            <h5 id="total-price">0 Kr</h5>
+          </div>       
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning btn-block">PAY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- SIGNIN MODAL -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" style="color: #007bff; font-size: 1.5em;">SIGN IN</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                  <div class="form-group">
+                    <label for="name" style="color: #007bff;"><i class="fas fa-user prefix"></i> User Name</label> 
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="name" style="color: #007bff;"><i class="fas fa-key prefix"></i> Password</label> 
+                    <input type="password" id="email" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn-block">SIGN IN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <section>
+    <div id="backGround" style="background: url('images/blog_bg.jpg') center top; background-size: cover;">
+      <div class="container d-flex flex-row" style="min-height: 20vh">
+   
+        <div class="row mx-1 pl-xm-5 d-flex mt-1">
+        
+          <div id="animaText" class="col-12 text-sm-left ml-sm-2 my-5 d-flex flex-wrap ml-3 justify-content-center">
+            <h3 class="display-4 text-warning"><span class="r_1">P</span>
+              <span class="e_1">H</span>
+              <span class="u_1">O</span>
+              <span class="s_1">T</span>
+              <span class="e_1">O</span>
+              <span class="u_2">G</span>
+              <span class="c_2">R</span>
+              <span class="c_3">A</span>
+              <span class="y_3">P</span>
+              <span class="c_3">H</span>
+              <span class="s_1">Y</span>
+            </h3>
+
+      </div>
+    </div>
+  </section>
+  <div class="under">Life Cycle</div>
+
+  <section>
+    <div class="container-fluid">
+      <div class="row text">
+        <div class="col-4 w-100 box1 bg-warning" style="height: 10px; border-top: 2px solid #ddd;"> 
+            <h4 class="text-center text-light display-sm-4"></h4>
+        </div>
+        <div class="col-4 w-100 box2 bg-warning" style="height: 10px; border-top: 2px solid #ddd;">
+            <h4 class="text-center text-light display-sm-4"></h4>
+        </div>
+        <div class="col-4 w-100 box3 bg-warning" style="height: 10px; border-top: 2px solid #ddd;">
+            <h4 class="text-center text-light display-sm-4"></h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DISPLAY -->
+    <!-- FROM BLOG -->
+    <section>
+        <div class="container-fluid mt-0">
+          <div class="row">
+            <div class="col-12 w-100 my-5">
+                <h4 class="text-center display-4 text-secondary">PRODUCTS</h4>
+                                  <!-- TO SORT -->
+           
+              <h5 class="text-center mx-auto">SORT BY PRICE</h5>
+            <div class="d-flex justify-content-center">
+              <select id="sortitems">
+                <option value="unsort">Unsorted</option>
+                <option value="low">Low Price</option>
+                <option value="high">High Price</option>
+            </select>
+            </div>
+            </div>
+
+          </div>
+        </div>
+  
+    
+      <div class="container">
+          <div class="row" id="showproducts">   
+             <!-- PRODUCT ITEMS SHOWS HERE  -->
+         </div>
+       </div>
+      </section>
+      
+  <footer>
+  <div class="container-fluid bg-warning py-2">
+      <div class="container text-center text-md-left">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-12 col-lg-12">
+          <p class="text-center text-white">© 2019 MARUF AHMED</p>
+        </div>
+        
+      </div>
+     </div>
+    </div>
+  </footer>
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
