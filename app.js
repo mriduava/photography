@@ -234,12 +234,12 @@ $('#undefined').on('click', function(){
 let cartarray = [];
 
 function addToCart(buybooks){
-  let list = `<div class="row">
-                  <div class="col-lg-2">                         
+  let list = `<div class="row nlist">
+                  <div class="col-2">                         
                     <button  type="button" class="btn btn-outline-danger btn-sm px-2 crossbtn"><i class="far fa-times-circle"></i></button> 
                   </div>  
-                  <div class="col-lg-10 d-flex justify-content-between">                                      
-                    <h5 class="px-3 text-warning">${buybooks.title}</h5>
+                  <div class="col-10 d-flex justify-content-between">                                      
+                    <h5 class="px-1 text-warning">${buybooks.title}</h5>
                     <h5 class="pl-4 text-dark">${buybooks.price} kr</h5>                  
                   </div>                    
               </div>`;                        

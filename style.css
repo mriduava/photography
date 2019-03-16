@@ -77,6 +77,11 @@
     color: #fff;
 }
 
+.nlist:nth-child(odd) {
+    background-color: rgba(229, 233, 31, 0.175);
+ 
+}
+
 /* For Sticky Navbar */ 
 .sticky {
 	z-index: 1;
