@@ -2,15 +2,15 @@
 
 let photos = [
   {
-    id: 1,
+    id: '1',
     title: 'i Phone',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_1.jpg',
-    categories: 'Electronics',
+    categories: 'Undefined',
     price: 199
   },
   {
-    id: 2,
+    id: '2',
     title: 'Galaxy',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_2.jpg',
@@ -18,15 +18,15 @@ let photos = [
     price: 229
   },
   {
-    id: 3,
-    title: 'Astronaut',
+    id: '3',
+    title: 'Rainbow',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_3.jpg',
-    categories: 'Science',
+    categories: 'Nature',
     price: 109
   },
   {
-    id: 4,
+    id: '4',
     title: 'Tulip',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_4.jpg',
@@ -34,7 +34,7 @@ let photos = [
     price: 390
   },
   {
-    id: 5,
+    id: '5',
     title: 'Orange Flowers',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_5.jpg',
@@ -42,67 +42,99 @@ let photos = [
     price: 490
   },
   {
-    id: 6,
+    id: '6',
     title: 'Abstract',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_6.jpg',
-    categories: 'Flower',
+    categories: 'Undefined',
     price: 245
   },
   {
-    id: 7,
-    title: 'Rubber Toys',
-    desc: 'It is a long established fact that a reader will be distracted.',
-    image: 'images/photo_12.jpg',
-    categories: 'Toys',
-    price: 235
-  },
-  {
-    id: 8,
+    id: '7',
     title: 'Record Player',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_7.jpg',
-    categories: 'Unknown',
-    price: 539
+    categories: 'Undefined',
+    price: 235
   },
   {
-    id: 9,
+    id: '8',
     title: 'Butterfly',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_8.jpg',
     categories: 'Nature',
-    price: 129
+    price: 539
   },
   {
-    id: 10,
+    id: '9',
     title: 'Flower Vase',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_9.jpg',
-    categories: 'Decoration',
-    price: 099
+    categories: 'Undefined',
+    price: 129
   },
   {
-    id: 11,
+    id: '10',
     title: 'Teddy Bear',
     desc: 'It is a long established fact that a reader will be distracted.',
     image: 'images/photo_10.jpg',
     categories: 'Toys',
+    price: 099
+  },
+  {
+    id: '11',
+    title: 'Blue Cloud',
+    desc: 'It is a long established fact that a reader will be distracted.',
+    image: 'images/photo_11.jpg',
+    categories: 'Landscape',
+    price: 310
+  },
+  {
+    id: '12',
+    title: 'Golden Bridge',
+    desc: 'It is a long established fact that a reader will be distracted.',
+    image: 'images/photo_12.jpg',
+    categories: 'Landscape',
     price: 290
   },
   {
-    id: 12,
+    id: '13',
     title: 'Rubber Animals',
     desc: 'It is a long established fact that a reader will be distracted.',
-    image: 'images/photo_11.jpg',
+    image: 'images/photo_13.jpg',
     categories: 'Toys',
     price: 119
-  }
+  },
+  {
+    id: '14',
+    title: 'Dolphin',
+    desc: 'It is a long established fact that a reader will be distracted.',
+    image: 'images/photo_14.jpg',
+    categories: 'Nature',
+    price: 490
+  },
+  {
+    id: '15',
+    title: 'Astronaut',
+    desc: 'It is a long established fact that a reader will be distracted.',
+    image: 'images/photo_15.jpg',
+    categories: 'Science',
+    price: 519
+  },
+  {
+    id: '16',
+    title: 'Domestic Goose',
+    desc: 'It is a long established fact that a reader will be distracted.',
+    image: 'images/photo_16.jpg',
+    categories: 'Nature',
+    price: 333
+  }  
 ];
 
 $(()=>{
   // TO DISPLAY PRODUCTS
 function dispProducts(products){
-    products.map(function(items){
+    products.forEach(function(items){
       let productshow = `<div id="productShow" class="col-lg-3 col-md-4 mb-4">
                         <div class="card">
                             <div class="bg-img">
@@ -126,55 +158,81 @@ function dispProducts(products){
     });
 }
 
-// SORT BY PRICE
 dispProducts(photos); 
-  
+btnClick(); 
+
+// SORT BY PRICE
 $('#sortitems').on('change', function(){
   let opt = $(this).val();
-//    console.log(opt);
   if(opt === 'low'){   
     let lowToHigh = photos.sort(function(a,b){
       return a.price - b.price;
     })  
     $('#showproducts').html(''); 
-    dispProducts(lowToHigh);      
+    dispProducts(lowToHigh); 
+    btnClick();     
   }else if(opt === 'high'){
     let highToLow = photos.sort(function(a,b){
       return b.price - a.price;
     })  
     $('#showproducts').html('');  
-    dispProducts(highToLow);  
+    dispProducts(highToLow); 
+    btnClick();  
   }else if(opt === 'unsort'){
     $('#showproducts').html('');  
     dispProducts(photos); 
+    btnClick();  
   }
 });
 
 // SORT BY CATEGORIES
-$('#science').on('click', function(){
-  const scienceDisp = photos.filter(photo=>photo.categories === 'Science');
-  // console.log(scienceDisp);
-  $('#showproducts').html(''); 
-  dispProducts(scienceDisp)
-});
-
 $('#flowers').on('click', function(){
   const flowerDisp = photos.filter(photo=>photo.categories === 'Flower');
-  // console.log(scienceDisp);
   $('#showproducts').html(''); 
   dispProducts(flowerDisp)
+  btnClick(); 
+});
+
+$('#science').on('click', function(){
+  const scienceDisp = photos.filter(photo=>photo.categories === 'Science');
+  $('#showproducts').html(''); 
+  dispProducts(scienceDisp)
+  btnClick(); 
+});
+
+$('#landscape').on('click', function(){
+  const landDisp = photos.filter(photo=>photo.categories === 'Landscape');
+  $('#showproducts').html(''); 
+  dispProducts(landDisp)
+  btnClick();
+});
+
+$('#nature').on('click', function(){
+  const natDisp = photos.filter(photo=>photo.categories === 'Nature');
+  $('#showproducts').html(''); 
+  dispProducts(natDisp)
+  btnClick();
 });
 
 $('#toys').on('click', function(){
   const toysDisp = photos.filter(photo=>photo.categories === 'Toys');
-  // console.log(scienceDisp);
   $('#showproducts').html(''); 
   dispProducts(toysDisp)
+  btnClick();
 });
 
+$('#undefined').on('click', function(){
+  const undDisp = photos.filter(photo=>photo.categories === 'Undefined');
+  $('#showproducts').html(''); 
+  dispProducts(undDisp)
+  btnClick();
+});
 
+// SEARCH
+
+// ADD TO SHOPPING CART
 let cartarray = [];
-  // ADD TO SHOPPING CART
+
 function addToCart(buybooks){
   let list = `<div class="row">
                   <div class="col-lg-2">                         
@@ -193,24 +251,24 @@ function removeItem(cartarray, deleteitem){
     cartarray.splice(deleteitem, 1);
 }
 
-
-$('#showproducts div .card .card-body .buybtn').on('click', function(e){
-  let btnid = $(this).attr('id');
-  // console.log(+btnid);
-  photos.forEach(function(items){
-      if(+btnid === items.id){
-          addToCart(items);
-          cartarray.push(items);
-      }
+function btnClick(){
+  $('button').on('click', function(){
+    let btnid = $(this).attr('id');
+    photos.map(function(items){
+        if(btnid === items.id){
+            addToCart(items);
+            cartarray.push(items);
+        }
+    });
+    $('.itemsnum').text(cartarray.length); 
+    $('#total-price').text(totalPrice)
   });
-  $('.itemsnum').text(cartarray.length); 
-  $('#total-price').text(totalPrice)
-});
+};
 
 // TO REMOVE ITEM FROM CARTLSIT
 $('#cart').on('click', 'button', function(e){
-    $(this).closest('.row').remove();
-    removeItem(cartarray);
+    let deleteItem = $(this).closest('.row').remove();
+    removeItem(cartarray, deleteItem);
     $('.itemsnum').text(cartarray.length);     
     $('#total-price').text(totalPrice)    
 });
@@ -225,35 +283,18 @@ function totalPrice(){
   return total + ' Kr';
 }
 
-// ANOTHER WAY TO CALCULATE
-// ------------------------
-// let cartArrayPrice = [];
-// cartarray.forEach(function(book){ 
-//   cartArrayPrice.push(book.price);   
-// });
-
-// let totalPrice = cartArrayPrice.reduce((acc, sum)=>acc + sum, 0);
-
-
-
-
 // STICKY NAVBAR
 window.onscroll = function(){
     stickyNav();
 };
 let navContainer = document.querySelector("#sticky");
 let sticky = navContainer.offsetTop;
-// console.log(sticky);
 
 function stickyNav() {
     if (window.pageYOffset > sticky) {
-        // console.log(pageYOffset);
       navContainer.classList.add("sticky")
     } else {
       navContainer.classList.remove("sticky");
     }
   }
-
 });
-
-
